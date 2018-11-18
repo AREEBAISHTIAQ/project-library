@@ -28,3 +28,7 @@ function Book(title, author, pages) {
     this.author = author;
     this.pages = pages;
 }
+
+function Remove() {
+   location.reload();
+}
