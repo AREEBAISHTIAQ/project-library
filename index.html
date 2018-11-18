@@ -10,25 +10,24 @@
 <body>
         <button onclick="document.getElementById('form').style.display='block'" class="newbook">Add New Book!</button>
     <div class="container">
-        <div class="title-div">
+        <div id="title-div" class="title-div">
                 <p class="heading">Title:</p>
                 <div id="showtitle"></div>
         </div>
-        <div class="author-div">
+        <div id="author-div" class="author-div">
                 <p class="heading">Author:</p>
                 <div id="showauthor"></div>
         </div>
-        <div class="pages-div">
+        <div id="pages-div" class="pages-div">
                 <p class="heading">Total number of pages:</p>
                 <div id="showpages"></div>
         </div>
-        <div class="read-div">
+        <div id="read-div" class="read-div">
                 <p class="heading">Read status:</p>
-                <input type="text" id="showread" class="input-read" disabled="disabled">
+                <p id="showread" class="input-read"></p>
         </div>
-        <div>
+        <div id="delete-div">
             <br><br>
-            <button id="delete" onclick="Remove()">Delete</button>
         </div>
     </div>
     <div id="form" class="modal">
@@ -36,8 +35,8 @@
         <input type="text" class="form-content" name="title" id="title" placeholder="Enter the book's title"><br>
         <input type="text" class="form-content" name="author" id="author" placeholder="Enter the book's author name"><br>
         <input type="number" class="form-content" name="pages" id="pages" placeholder="Enter the book's total pages"><br>
-        <input type="radio" onclick="Radio(this.value)" value="read" name="read" class="read" id="read">Read<br>
-        <input type="radio" onclick="Radio(this.value)" value="not read" name="read" id="read" checked="checked">Not read<br>
+        <input type="radio" value="read" name="read" class="read" id="read">Read<br>
+        <input type="radio" value="not read" name="read" id="read" checked="checked">Not read<br>
         <button onclick="Submit()" id="submit" class="submit">Submit</button>
     </div>
         <p id="test"></p>

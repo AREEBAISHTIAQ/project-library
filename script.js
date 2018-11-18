@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-var modal = document.getElementById('form');
+let modal = document.getElementById('form');
 
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -9,19 +9,36 @@ window.onclick = function(event) {
 }
 
 function Submit() {
-    let submit = document.getElementById("submit").addEventListener("click", function() {
-        document.getElementById("showtitle").innerHTML = document.getElementById("title").value;
-        document.getElementById("showauthor").innerHTML = document.getElementById("author").value;
-        document.getElementById("showpages").innerHTML = document.getElementById("pages").value;
-        //document.getElementById("showread").innerHTML = document.getElementById("read").value;
+    let createtp = document.createElement("p");
+    let title = document.getElementById("title").value; 
+    let titlenode = document.createTextNode(title);
+    createtp.appendChild(titlenode);
+    document.getElementById("title-div").appendChild(createtp);
 
-        document.getElementById("form").style.display='none';
-    });
+    let createap = document.createElement("p");
+    let author = document.getElementById("author").value;
+    let authornode = document.createTextNode(author);
+    createap.appendChild(authornode);
+    document.getElementById("author-div").appendChild(createap);
+
+    let createpp = document.createElement("p");
+    let pages = document.getElementById("pages").value;
+    let pagesnode = document.createTextNode(pages);
+    createpp.appendChild(pagesnode);
+    document.getElementById("pages-div").appendChild(createpp);
+
+    let createrp = document.createElement("p");
+    let read = document.getElementById("read").value;
+    let readnode = document.createTextNode(read);
+    createrp.appendChild(readnode);
+    document.getElementById("read-div").appendChild(createrp);
+
+    let createdp = document.createElement("button");
+    let deletebtn = document.getElementById("delete"); 
+    let deletenode = document.createTextNode("Delete");
+    createdp.appendChild(deletenode);
+    document.getElementById("delete-div").appendChild(createdp);
 }
-
-function Radio(read) {
-    document.getElementById("showread").value = read;
-} 
 
 function Book(title, author, pages) {
     this.title = title;
