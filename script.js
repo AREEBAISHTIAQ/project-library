@@ -59,3 +59,13 @@ function Book(title, author, pages) {
     this.author = author;
     this.pages = pages;
 }
+
+(function (){
+    var radios = document.getElementsByName('read');
+    console.log(radios);
+    for(var i = 0; i < radios.length; i++){
+        radios[i].onclick = function(){
+            document.getElementById('readtext').innerText = this.value;
+        }
+    }
+})();
